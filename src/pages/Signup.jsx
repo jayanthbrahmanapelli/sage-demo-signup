@@ -3,7 +3,7 @@ import { Card, Field, Message } from '../components/Card.jsx';
 import { Link, navigate } from '../router.jsx';
 import { findUser, saveUser } from '../store.js';
 
-const PASSWORD_RULES = [
+export const PASSWORD_RULES = [
   { id: 'length', label: 'At least 8 characters long', error: 'Password must be at least 8 characters long.', test: (value) => value.length >= 8 },
   { id: 'upper', label: 'At least one uppercase letter', error: 'Password must contain at least one uppercase letter.', test: (value) => /[A-Z]/.test(value) },
   { id: 'lower', label: 'At least one lowercase letter', error: 'Password must contain at least one lowercase letter.', test: (value) => /[a-z]/.test(value) },

@@ -24,6 +24,9 @@ export default function Login() {
       <form onSubmit={submit} noValidate>
         <Field label="Email" name="email" type="email" autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
         <Field label="Password" name="password" type="password" autoComplete="current-password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+        <p className="switch forgot">
+          <Link to="/reset-password">Forgot password?</Link>
+        </p>
         <Message>{error}</Message>
         <button type="submit">Log in</button>
       </form>

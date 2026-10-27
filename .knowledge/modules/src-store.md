@@ -4,10 +4,10 @@ title: src/store
 description: Demo-only account persistence over localStorage and sessionStorage.
 resource: https://github.com/jayanthbrahmanapelli/sage-demo-signup/tree/main/src/store.js
 tags: [frontend, storage, core]
-generated: { by: sage-maintenance/claude-code, at: 2026-10-27T14:29:00Z }
+generated: { by: sage-maintenance/claude-code, at: 2026-10-27T16:23:05Z }
 sources:
   - id: cbm-graph
-    resource: codebase-memory-mcp project sage-demo-signup @ b5726803264bd97b2b8a57a4ce10fade3b3130f9
+    resource: codebase-memory-mcp project sage-demo-signup @ a4ccb0fcda14fb892e86dffa67f9cd4f96f04a1e
     title: Codebase knowledge graph
 status: stable
 ---
@@ -39,13 +39,15 @@ A stored user record is `{ name, email, password }`, written by
 
 * No imports. Browser globals only.
 * Called by [src/pages](/modules/src-pages.md): `Signup` (`findUser`,
-  `saveUser`), `Login` (`findUser`, `setCurrentUser`), `Welcome`
-  (`currentUser`).
+  `saveUser`), `Login` (`findUser`, `setCurrentUser`), `ResetPassword`
+  (`findUser`, `saveUser`), `Welcome` (`currentUser`).
 
 # Notes
 
 * Two storage scopes on purpose: accounts survive a browser restart,
   the session does not.
 * `saveUser` overwrites an existing entry silently - duplicate rejection is the
-  caller's job and lives in `Signup.submit`.
+  caller's job and lives in `Signup.submit`. `ResetPassword.submit` relies on
+  the same overwrite, passing `{ ...user, password }` so the rest of the record
+  survives.
 * The session key `'acme-current'` is an inline literal, unlike `KEY`.

@@ -4,10 +4,10 @@ title: Graph queries
 description: How to query the live codebase knowledge graph for this project.
 resource: https://github.com/jayanthbrahmanapelli/sage-demo-signup/tree/main/.codebase-memory
 tags: [reference, tooling, knowledge-graph]
-generated: { by: sage-maintenance/claude-code, at: 2026-10-27T14:29:00Z }
+generated: { by: sage-maintenance/claude-code, at: 2026-10-27T16:23:05Z }
 sources:
   - id: cbm-graph
-    resource: codebase-memory-mcp project sage-demo-signup @ b5726803264bd97b2b8a57a4ce10fade3b3130f9
+    resource: codebase-memory-mcp project sage-demo-signup @ a4ccb0fcda14fb892e86dffa67f9cd4f96f04a1e
     title: Codebase knowledge graph
 status: stable
 ---
@@ -34,15 +34,20 @@ Prefer these tools over grepping or reading whole files.
 
 # Shape of this graph
 
-118 nodes, 174 edges at the indexed commit.
+281 nodes, 359 edges at the indexed commit.
 
 | Labels | Count | | Edge types | Count |
 | --- | --- | --- | --- | --- |
-| `Variable` | 54 | | `DEFINES` | 92 |
-| `Function` | 20 | | `IMPORTS` | 25 |
-| `File` | 16 | | `CALLS` | 24 |
-| `Module` | 16 | | `CONTAINS_FILE` | 16 |
-| `Folder` | 8 | | `USAGE` | 8 |
+| `Variable` | 101 | | `DEFINES` | 230 |
+| `Section` | 69 | | `CONTAINS_FILE` | 37 |
+| `File` | 37 | | `IMPORTS` | 34 |
+| `Module` | 37 | | `CALLS` | 31 |
+| `Function` | 23 | | `USAGE` | 11 |
+| `Folder` | 12 | | `CONTAINS_FOLDER` | 10 |
+
+Most `Variable` and `Section` nodes come from the JSON and YAML files under
+`.ui-gen/`, `.sage-maintenance/` and `.github/`, not from `src/` - filter on
+`n.file_path STARTS WITH 'src'` when you want application symbols only.
 
 Qualified names are dotted and rooted at the project:
 `sage-demo-signup.src.pages.Signup.submit`.
