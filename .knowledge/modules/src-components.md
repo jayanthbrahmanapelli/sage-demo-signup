@@ -4,10 +4,10 @@ title: src/components
 description: Shared presentational primitives: Card, Field and Message.
 resource: https://github.com/jayanthbrahmanapelli/sage-demo-signup/tree/main/src/components
 tags: [frontend, components, core]
-generated: { by: sage-maintenance/claude-code, at: 2026-10-27T14:29:00Z }
+generated: { by: sage-maintenance/claude-code, at: 2026-10-27T16:23:05Z }
 sources:
   - id: cbm-graph
-    resource: codebase-memory-mcp project sage-demo-signup @ b5726803264bd97b2b8a57a4ce10fade3b3130f9
+    resource: codebase-memory-mcp project sage-demo-signup @ a4ccb0fcda14fb892e86dffa67f9cd4f96f04a1e
     title: Codebase knowledge graph
 status: stable
 ---
@@ -15,7 +15,7 @@ status: stable
 # Role
 
 `src/components/Card.jsx` holds every shared UI primitive in the app. All three
-are purely presentational - no state, no storage, no navigation.
+primitives are purely presentational - no state, no storage, no navigation.
 
 # Contents
 
@@ -40,4 +40,4 @@ are purely presentational - no state, no storage, no navigation.
 
 * No imports at all.
 * Consumed by every page in [src/pages](/modules/src-pages.md); `Card` has
-  fan-in 3, `Field` and `Message` fan-in 2 each.
+  fan-in 4, `Field` and `Message` fan-in 3 each.

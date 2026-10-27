@@ -4,17 +4,17 @@ okf_version: "0.2"
 
 # Start Here
 
-* [Codebase Overview](/overview.md) - Vite + React single-page demo for account signup, login and a welcome screen, backed by browser storage.
+* [Codebase Overview](/overview.md) - Vite + React single-page demo for account signup, login, password reset and a welcome screen, backed by browser storage.
 * [Architecture](/architecture.md) - Three-layer client-only app: page components call a hand-rolled router, a localStorage account store and shared Card primitives.
 * [Conventions](/conventions.md) - Conventions for routing, page components, form state and the demo-only storage layer.
 
 # Modules
 
-* [src/App](/modules/src-app.md) - Root component that maps the current path to one of the three page components.
+* [src/App](/modules/src-app.md) - Root component that maps the current path to one of the four page components.
 * [src/router](/modules/src-router.md) - Minimal history-API router providing navigate, usePath and Link.
 * [src/store](/modules/src-store.md) - Demo-only account persistence over localStorage and sessionStorage.
 * [src/components](/modules/src-components.md) - Shared presentational primitives: Card, Field and Message.
-* [src/pages](/modules/src-pages.md) - The three routed screens: Signup, Login and Welcome.
+* [src/pages](/modules/src-pages.md) - The four routed screens: Signup, Login, ResetPassword and Welcome.
 * [src/main](/modules/src-main.md) - Browser entry point that mounts App into #root and loads the stylesheet.
 
 # Playbooks
