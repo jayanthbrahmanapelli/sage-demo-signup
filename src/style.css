@@ -107,3 +107,8 @@ button {
 a {
   color: var(--accent);
 }
+
+.switch.forgot {
+  margin: -4px 0 0;
+  text-align: right;
+}
