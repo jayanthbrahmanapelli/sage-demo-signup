@@ -1,0 +1,72 @@
+{
+  "trace_id": "c62261894bb2",
+  "branch": "ui-correction/c62261894bb2",
+  "maintenance_branch": "ui-correction/c62261894bb2",
+  "status": "SUCCESS",
+  "summary": "Added the five password rules to the sign-up page: they are listed under the password field as hints, and on submit each unmet rule turns red and shows its own error message. Password validation runs before the confirm-match and duplicate-email checks. All backend-side validation (if any) belongs to the separate backend repository and was left untouched.",
+  "files_changed": [
+    "src/pages/Signup.jsx",
+    "src/style.css"
+  ],
+  "lines_changed": 42,
+  "blockers": [],
+  "conventions": [
+    "Sign-up passwords must be at least 8 characters and contain an uppercase letter, a lowercase letter, a number and a special character (any non-alphanumeric); the rules are always visible under the password field and each unmet rule shows its own inline error on submit, before confirm-match and duplicate-email checks run"
+  ],
+  "visual_check": {
+    "verdict": "pass",
+    "evidence": "The /signup page shows the five password rules as a bulleted list directly under the password field (at least 8 characters, one uppercase, one lowercase, one number, one special character).",
+    "screenshot_path": "/tmp/actual.png"
+  },
+  "context_sharing": {
+    "target": "frontend",
+    "branch": "ui-correction/c62261894bb2",
+    "base_path": "",
+    "endpoints": [],
+    "types": {
+      "SignupForm": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "type": "string"
+        },
+        {
+          "name": "confirm",
+          "type": "string"
+        }
+      ],
+      "User": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "email",
+          "type": "string"
+        },
+        {
+          "name": "password",
+          "type": "string"
+        }
+      ]
+    },
+    "notes": "There is no HTTP API: signup persists via src/store.js helpers findUser(email)/saveUser(user) backed by localStorage key 'acme-users' (keyed by lowercased, trimmed email), with session state in sessionStorage key 'acme-current'. The stored User object omits the 'confirm' field, and src/style.css contains only presentation rules (.rules, .failed) with no contract."
+  },
+  "usage": {
+    "num_turns": 8,
+    "duration_ms": 30788,
+    "total_cost_usd": 0.2556574,
+    "input_tokens": 2515,
+    "output_tokens": 2066,
+    "cache_creation_input_tokens": 27380,
+    "cache_read_input_tokens": 173478,
+    "is_error": false
+  }
+}
