@@ -72,6 +72,17 @@ button {
   cursor: pointer;
 }
 
+.rules {
+  margin: -6px 0 0;
+  padding-left: 18px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.rules .rule.error {
+  color: var(--error);
+}
+
 .message {
   margin: 0;
   font-size: 14px;
